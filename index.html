@@ -1,21 +1,187 @@
-## Hi, I'm Izukia 👋
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Welcome ✨</title>
+  <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --accent:#ff7ab6;
+      --accent2:#7be7ff;
+      --text:#2b2b2b;
+    }
+    html,body{
+      height:100%;
+      margin:0;
+      font-family:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,Arial;
+      overflow:hidden;
+    }
+    body{
+      background:linear-gradient(135deg,#ffd6e8,#e6f7ff);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:32px;
+      box-sizing:border-box;
+    }
+    body::before{
+      content:'';
+      position:absolute;
+      inset:0;
+      background:linear-gradient(-45deg,rgba(255,182,193,0.4),rgba(216,191,255,0.4),rgba(173,216,230,0.4));
+      background-size:400% 400%;
+      animation:gradientShift 20s ease infinite;
+      z-index:0;
+    }
+    @keyframes gradientShift{
+      0%{background-position:0% 50%}
+      50%{background-position:100% 50%}
+      100%{background-position:0% 50%}
+    }
+    .card{
+      position:relative;
+      z-index:1;
+      width:100%;
+      max-width:920px;
+      background:rgba(255,255,255,0.92);
+      border-radius:20px;
+      padding:28px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.12);
+    }
+    header{
+      display:flex;
+      gap:16px;
+      align-items:center;
+    }
+    .avatar img{
+      width:110px;
+      height:110px;
+      border-radius:18px;
+      object-fit:cover;
+      box-shadow:0 8px 18px rgba(0,0,0,0.15);
+    }
+    h1{
+      font-family:'Gamja Flower',cursive;
+      margin:0;
+      font-size:34px;
+      color:var(--accent);
+    }
+    .divider{
+      width:100%;
+      height:3px;
+      margin:8px 0 12px;
+      background:linear-gradient(to right,#ffb6c1,#d8bfff,#add8e6);
+      border-radius:2px;
+    }
+    p.lead{margin:0;color:#333}
+    main{
+      display:flex;
+      gap:28px;
+      margin-top:18px;
+    }
+    .left{flex:1}
+    .right{width:300px}
+    .message-box{
+      background:rgba(255,255,255,0.8);
+      border-radius:14px;
+      padding:18px;
+    }
+    .message-box h2{margin:0 0 8px;color:#6a2a63}
+    footer{
+      margin-top:18px;
+      text-align:center;
+      font-size:13px;
+      color:#555;
+    }
 
-🎓 Computer Science student at VNUHCM – UIT  
-🤖 Interested in Artificial Intelligence & Machine Learning  
+    /* Decorative effects */
+    .petal,.sparkle{position:absolute;pointer-events:none}
+    .petal{
+      width:14px;height:14px;
+      background:#ffb6c1;
+      border-radius:100% 0 100% 0;
+      transform:rotate(45deg);
+      animation:falling 12s linear infinite;
+    }
+    @keyframes falling{
+      from{transform:translateY(-100vh) rotate(0deg)}
+      to{transform:translateY(110vh) rotate(360deg)}
+    }
+    .sparkle{
+      width:6px;height:6px;
+      background:white;
+      border-radius:50%;
+      box-shadow:0 0 8px white;
+      animation:glow 5s infinite;
+    }
+    @keyframes glow{
+      0%,100%{opacity:0}
+      50%{opacity:.8}
+    }
+  </style>
+</head>
 
-### About me
-I am a Computer Science student who is interested in how AI systems work and how they can be applied to solve real-world problems. I enjoy learning through hands-on practice, experimenting with code, and building small projects to understand concepts better.
+<body>
+  <div class="card">
+    <header>
+      <div class="avatar">
+        <img src="pfp.png" alt="Profile picture">
+      </div>
+      <div>
+        <h1>Hello, I’m Izuki 🌸</h1>
+        <div class="divider"></div>
+        <p class="lead">Computer Science student • AI / ML enthusiast</p>
+      </div>
+    </header>
 
-### Interests
-- Artificial Intelligence
-- Machine Learning
-- Applied AI projects
-- Learning by doing
+    <main>
+      <div class="left">
+        <div class="message-box">
+          <h2>About Me</h2>
+          <p>
+            I’m a Computer Science student interested in Artificial Intelligence
+            and Machine Learning. I enjoy learning by building things, experimenting
+            with code, and understanding how systems improve over time.
+          </p>
+        </div>
+      </div>
 
-### Skills (currently learning)
-- C / C++
-- Python (basic)
-- Git & GitHub
+      <aside class="right">
+        <div class="message-box">
+          <h2>Interests</h2>
+          <ul>
+            <li>Artificial Intelligence</li>
+            <li>Machine Learning</li>
+            <li>Applied AI projects</li>
+          </ul>
+        </div>
+      </aside>
+    </main>
 
-### Contact
-GitHub: https://github.com/1zuki
+    <footer>
+      Made with 💖 and curiosity • Hosted on GitHub Pages
+    </footer>
+  </div>
+
+  <script>
+    function createPetal(){
+      const p=document.createElement('div');
+      p.className='petal';
+      p.style.left=Math.random()*100+'vw';
+      document.body.appendChild(p);
+      setTimeout(()=>p.remove(),12000);
+    }
+    function createSparkle(){
+      const s=document.createElement('div');
+      s.className='sparkle';
+      s.style.left=Math.random()*100+'vw';
+      s.style.top=Math.random()*100+'vh';
+      document.body.appendChild(s);
+      setTimeout(()=>s.remove(),5000);
+    }
+    setInterval(createPetal,500);
+    setInterval(createSparkle,1200);
+  </script>
+</body>
+</html>
