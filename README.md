@@ -1,6 +1,6 @@
 # About me
 
-## Hi, I'm Izukia 👋
+## Hi, I'm An (Izu) 👋
 
 🎓 Computer Science student at VNUHCM – UIT  
 🤖 Interested in Artificial Intelligence & Machine Learning  
